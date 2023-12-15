@@ -21,7 +21,7 @@ function logout(){
   setUserInfo(null)
 }
 const username= userInfo?.username;
-    return(
+    return(git pull origin tu-rama
         <header>
       <Link to='/' className="logo">Mi Blog</Link>
       <nav>
