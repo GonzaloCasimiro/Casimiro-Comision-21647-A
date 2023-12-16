@@ -1,19 +1,28 @@
-export default function Post(){
+import { format } from 'date-fns';
+import { es } from 'date-fns/locale';
+import { Link } from 'react-router-dom';
+export default function Post({_id,title,summary,cover,content,createdAt,author}){
     return(
         <div className="post">
       <div className="image">
-        <img src="https://th.bing.com/th/id/OIP.V0JTWlV762CZMdoONJZT9QHaEK?rs=1&pid=ImgDetMain"/>
+      <Link to={`/post/${_id}`}>
+        <img src={'http://localhost:4000/'+cover} alt=""/>
+      </Link>
       </div>
       <div className="texts">
+      <Link to={`/post/${_id}`}>
         <h2>
-        BEST LAPTOP2022-2023
+        {title}
         </h2>
+      </Link>
+        
         <p className="info">
-          <a className="author">Gonzalo Ismael</a>
-          <time> 2023-12-10 04:18</time>
+          <a className="author">{author.username}</a>
+          <time>{format(new Date(createdAt), 'MMM d, yyyy HH:mm', { locale: es })}</time>
         </p>
-        <p className="summary">There are just so a lot of them. But what is the most pleasant computer for you? Is it an enterprise notebook, an effective gaming pc, or a Chromebook?</p>
+        <p className="summary">{summary}</p>
         </div>
+        
       </div>
     )
 }

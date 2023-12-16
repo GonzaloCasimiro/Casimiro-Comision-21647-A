@@ -1,4 +1,4 @@
-import {Link} from 'react-router-dom'
+import { Link } from 'react-router-dom';
 import{useEffect,useState,useContext} from 'react';
 import{UserContext} from '../userContext'
 export default function Header(){
@@ -21,12 +21,12 @@ function logout(){
   setUserInfo(null)
 }
 const username= userInfo?.username;
-    return(git pull origin tu-rama
+    return(
         <header>
-      <Link to='/' className="logo">Mi Blog</Link>
+      <Link to='/' className="logo">Tech Blog</Link>
       <nav>
       {username && (
-        <><Link to="/create">Crear nuevo Post</Link>
+        <><Link to="/create">Crear Post</Link>
         <a onClick={logout}>Cerrar Sesion</a></>
       )}
       {!username &&(
